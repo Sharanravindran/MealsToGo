@@ -9,6 +9,7 @@ import { SafeArea } from '../../../layout/safeArea/safeArea'
 import { Search } from '../components/search.component';
 import { FavouritesContext } from "../../../api/favourites/context/favourites.context";
 import { FavouritesBar } from '../../../components/favourite/favouites-bar.component';
+import { FadeInView } from '../../../layout/animations/fade.animation';
 
 const CardContainer = styled.View`
     flex: 1;
@@ -57,7 +58,9 @@ export const RestaurantsScreen = ({ navigation }) => {
                                         }
                                     >
                                         <Spacer position="bottom" size="large">
-                                            <RestaurantCard restaurant={item} />
+                                            <FadeInView>
+                                                <RestaurantCard restaurant={item} />
+                                            </FadeInView>
                                         </Spacer>
                                     </TouchableOpacity>
                                 );
